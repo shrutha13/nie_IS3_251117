@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { Button } from 'react-native';
 
 
-export default function App() {
+export default function SqrCalc() {
   const [calcData,setCalcData]= useState({num: 0.0, result: null});
   const doCalc=() => {
     if(isNaN(calcData.num)){
@@ -13,12 +13,12 @@ export default function App() {
     }
     const num =calcData.num;
     const sqr= num*num;
-    setCalcData({...calcData,result : `Result of ${num} is ${sqr}`})
+    setCalcData({...calcData,result : ` of ${num} is ${sqr}`})
 
   }
   return (
     <View style={styles.container}>
-      <Text style = {styles.title}>Square it gworl!</Text>
+      <Text style = {styles.title}>Square calc</Text>
       <TextInput value={calcData.num} keyboardType='numeric'
       placeholder='Enter number'
       onChangeText={(data) => setCalcData({...calcData, num: data})}/>
